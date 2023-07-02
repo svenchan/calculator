@@ -35,8 +35,14 @@ section, div {
     font-size: calc(5rem + 0.7vw);
     padding-right: 2vw;
     background-color: #052934;
+    
 }
 
+#scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
 /*Buttons*/
 .btn-section {
     height: 70vh;

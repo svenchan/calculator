@@ -1,10 +1,23 @@
 //Display and input
 const output = document.getElementById('output');
 
+function updateDisplay(number) {
+    if (output.textContent === '0'){
+        output.textContent = number;
+    } else {
+        output.textContent += number;
+    }
+}
+
+function scrollDisplayToEnd() {
+    const display = document.getElementById('scroll-wrapper');
+    display.scrollLeft = display.scrollWidth;
+}
+
 //Top Row Buttons
 const clearBtn = document.getElementById('clear');
 clearBtn.addEventListener('click', () => {
-    output.textContent = '';
+    output.textContent = '0';
 });
 
 const negativeBtn = document.getElementById('negative');
@@ -20,47 +33,58 @@ percentileBtn.addEventListener('click', () => {
 //Number Buttons
 const sevenBtn = document.getElementById('seven');
 sevenBtn.addEventListener('click', () => {
-    output.textContent += '7';
+    updateDisplay('7');
+    scrollDisplayToEnd();
 });
-const eightBtn = document.getElementById('eigth');
+const eightBtn = document.getElementById('eight');
 eightBtn.addEventListener('click', () => {
-    output.textContent += '8';
+    updateDisplay('8');
+    scrollDisplayToEnd();
 });
 const nineBtn = document.getElementById('nine');
 nineBtn.addEventListener('click', () => {
-    output.textContent += '9';
+    updateDisplay('9');
+    scrollDisplayToEnd();
 });
 const fourBtn = document.getElementById('four');
 fourBtn.addEventListener('click', () => {
-    output.textContent += '4';
+    updateDisplay('4');
+    scrollDisplayToEnd();
 });
 const fiveBtn = document.getElementById('five');
 fiveBtn.addEventListener('click', () => {
-    output.textContent += '5';
+    updateDisplay('5');
+    scrollDisplayToEnd();
 });
 const sixBtn = document.getElementById('six');
 sixBtn.addEventListener('click', () => {
-    output.textContent += '6';
+    updateDisplay('6');
+    scrollDisplayToEnd();
 });
 const oneBtn = document.getElementById('one');
 oneBtn.addEventListener('click', () => {
-    output.textContent += '1';
+    updateDisplay('1');
+    scrollDisplayToEnd();
 });
 const twoBtn = document.getElementById('two');
 twoBtn.addEventListener('click', () => {
-    output.textContent += '2';
+    updateDisplay('2');
+    scrollDisplayToEnd();
 });
 const threeBtn = document.getElementById('three');
 threeBtn.addEventListener('click', () => {
-    output.textContent += '3';
+    updateDisplay('3');
+    scrollDisplayToEnd();
 });
 const zeroBtn = document.getElementById('zero');
 zeroBtn.addEventListener('click', () => {
-    output.textContent += '0';
+    updateDisplay('0');
+    scrollDisplayToEnd();
 });
 const decimalBtn = document.getElementById('decimal');
 decimalBtn.addEventListener('click', () => {
-    output.textContent += '.';
+    updateDisplay('.');
+    scrollDisplayToEnd();
 });
 
 //Function Buttons
