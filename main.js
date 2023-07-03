@@ -88,25 +88,44 @@ decimalBtn.addEventListener('click', () => {
 });
 
 //Function Buttons
+const functionBtns = document.getElementsByClassName('function');
+
+function removeClassFromBtns(group, className){
+    for (let i = 0; i < group.length; i++) {
+        group[i].classList.remove(className);
+    }
+}
+
 const additionBtn = document.getElementById('addition');
 additionBtn.addEventListener('click', () => {
+    removeClassFromBtns(functionBtns, 'active-function');
+    additionBtn.classList.add('active-function');
     return '+';
+
 });
 const devideBtn = document.getElementById('devide');
 devideBtn.addEventListener('click', () => {
+    removeClassFromBtns(functionBtns, 'active-function');
+    devideBtn.classList.add('active-function');
     return '/';
 });
 const equalsBtn = document.getElementById('equals');
 equalsBtn.addEventListener('click', () => {
+    removeClassFromBtns(functionBtns, 'active-function');
+    equalsBtn.classList.add('active-function');
     operate();
 });
 const multiplyBtn = document.getElementById('multiply');
 multiplyBtn.addEventListener('click', () => {
+    removeClassFromBtns(functionBtns, 'active-function');
+    multiplyBtn.classList.add('active-function');
     return '*';
 });
 
 const subtractBtn = document.getElementById('subtract');
 subtractBtn.addEventListener('click', () => {
+    removeClassFromBtns(functionBtns, 'active-function');
+    subtractBtn.classList.add('active-function');
     return '-';
 });
 
@@ -114,17 +133,19 @@ subtractBtn.addEventListener('click', () => {
 //Keyboard 
 document.addEventListener('keydown', (event) => {
     console.log(event);
-    if (event.key === '.'){output.textContent += event.key;}
-    if (event.key === '0'){output.textContent += event.key;}
-    if (event.key === '1'){output.textContent += event.key;}
-    if (event.key === '2'){output.textContent += event.key;}
-    if (event.key === '3'){output.textContent += event.key;}
-    if (event.key === '4'){output.textContent += event.key;}
-    if (event.key === '5'){output.textContent += event.key;}
-    if (event.key === '6'){output.textContent += event.key;}
-    if (event.key === '7'){output.textContent += event.key;}
-    if (event.key === '8'){output.textContent += event.key;}
-    if (event.key === '9'){output.textContent += event.key;}
+    if (event.key === '.'){updateDisplay('.')}
+    if (event.key === '0'){updateDisplay('0')}
+    if (event.key === '1'){updateDisplay('1')}
+    if (event.key === '2'){updateDisplay('2')}
+    if (event.key === '3'){updateDisplay('3')}
+    if (event.key === '4'){updateDisplay('4')}
+    if (event.key === '5'){updateDisplay('5')}
+    if (event.key === '6'){updateDisplay('6')}
+    if (event.key === '7'){updateDisplay('7')}
+    if (event.key === '8'){updateDisplay('8')}
+    if (event.key === '9'){updateDisplay('9')}
+    if (event.key === 'Backspace'){output.textContent = 0;}
+    scrollDisplayToEnd();
 
 });
 

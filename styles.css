@@ -71,6 +71,10 @@ section, div {
     background-color: #07576d;
 }
 
+.active-function {
+    box-shadow: 0 0 0 1px black inset;
+}
+
 .top-row {
     background-color: #06485b;
 }
