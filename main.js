@@ -112,7 +112,6 @@ devideBtn.addEventListener('click', () => {
 const equalsBtn = document.getElementById('equals');
 equalsBtn.addEventListener('click', () => {
     removeClassFromBtns(functionBtns, 'active-function');
-    equalsBtn.classList.add('active-function');
     operate();
 });
 const multiplyBtn = document.getElementById('multiply');
@@ -145,8 +144,36 @@ document.addEventListener('keydown', (event) => {
     if (event.key === '8'){updateDisplay('8')}
     if (event.key === '9'){updateDisplay('9')}
     if (event.key === 'Backspace'){output.textContent = 0;}
+    //equals key
+    if (event.key === '='){
+        removeClassFromBtns(functionBtns, 'active-function');
+        operate();
+    }
+    //division key
+    if (event.key === '/'){
+        removeClassFromBtns(functionBtns, 'active-function');
+        devideBtn.classList.add('active-function');
+    }
+    //minus key
+    if (event.key === '-'){
+        removeClassFromBtns(functionBtns, 'active-function');
+        subtractBtn.classList.add('active-function');
+    }
+    //addition key
+    if (event.shiftKey && event.key === "+") {
+        removeClassFromBtns(functionBtns, 'active-function');
+        additionBtn.classList.add('active-function');
+    }
+    //multiply key
+    if (event.shiftKey && event.key === "*"){
+        removeClassFromBtns(functionBtns, 'active-function');
+        multiplyBtn.classList.add('active-function');
+    }
+    //percentage key
+    if (event.shiftKey && event.key === '%'){
+        
+    }
     scrollDisplayToEnd();
-
 });
 
 // operate function
